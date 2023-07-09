@@ -1,0 +1,70 @@
+On receiving an interrupt from a I/O device the CPU:
+a)Halts for a predetermined time.
+b)Hands over control of address bus and data bus to the interrupting device.
+c)Branches off to the interrupt service routine immediately.
+d)Branches off to the interrupt service routine after completion of the current instruction.
+Correct answer is option 'D'. Can you explain this answer?
+
+
+Interrupt Handling in CPU
+
+An interrupt is a signal that is sent to the CPU by an I/O device to request its attention. When the CPU receives an interrupt, 
+it temporarily stops executing its current program and transfers control to a special routine called the interrupt service routine (ISR).
+
+Handling Interrupts
+
+When the CPU receives an interrupt, it follows the following steps to handle it:
+
+1. Save the current state: The CPU saves the current state of the program, including the program counter, on the stack.
+
+2. Determine the interrupt source: The CPU reads the interrupt request register to determine the source of the interrupt.
+
+3. Disable interrupts: The CPU disables interrupts to prevent other interrupts from occurring while it is servicing the current interrupt.
+4. Branch to the ISR: The CPU branches to the ISR, which is a special routine that handles the interrupt. The ISR executes a sequence of instructions to service the interrupt.
+
+5. Enable interrupts: After the ISR completes, the CPU re-enables interrupts and returns to the interrupted program.
+
+Option D
+
+The correct answer is option D, i.e., the CPU branches off to the interrupt service routine after completion of the current instruction. 
+This is because the CPU cannot immediately branch off to the ISR when it receives an interrupt. It must complete the current instruction before servicing the interrupt. 
+This ensures that the program state is saved correctly before the CPU transfers control to the ISR.
+
+Conclusion
+
+In conclusion, interrupt handling is an important mechanism in the CPU that allows I/O devices to request the CPU's attention. 
+When the CPU receives an interrupt, it temporarily stops executing its current program and transfers control to the ISR. 
+The CPU follows a sequence of steps to handle the interrupt and returns to the interrupted program after the ISR completes.
+
+
+
+What Is Real-Time Software and Why Do I Need It?
+Jan 27, 2017
+
+Most operating systems are designed to multitask. This means that several processes will be running at the same time. 
+But the reality is that each processor only runs or executes one activity or command at a time. Every operating system comes with a scheduler. 
+This is a programmed command center that gives priority by switching actions depending on anticipated results.
+
+The definition of a real-time software is one that comes with a scheduler that decides what activity should take place at a particular time. 
+In fact, all computer devices come with schedulers but their execution is not advanced. Complex facilities like production plants require greater precision, speed and customization.
+
+Why choose real-time software?
+
+In a production environment, multiple tasks are taking place simultaneously. 
+You need a scheduler to determine which action is given priority and which one has to wait. 
+The design of real-time software (RTS) has to guarantee determinism. This may also be regarded as predictability. 
+This is programming which determines the task that takes preference. Failure to have a reasonable order leads to negative outcomes.
+
+There is a deadline element to every RTS. During programming, the system must respond to a command within a set time frame. 
+Missing this deadline may be catastrophic, like in the case of an airbag deploying, or may simply bring undesired results, like in production where the quality of a product is reduced.
+
+What determines high quality real-time software?
+
+Programming has given rise to numerous applications that can be used for automation purposes. 
+Generally, real-time software is an application whose performance is considered current or immediate by the user. However, a few factors determine whether it qualifies as RTS or not.
+
+Worst case execution time (WCET): This is the extreme to which an application disappoints the user. It should be as little as possible.
+Time taken to execute a task: Technology and automation are designed to reduce time taken to execute certain tasks. 
+Time should be synchronized or aligned to other tasks that are related. Here, speed is not as important as synchronizing of activities.
+Number of tasks on a hardware platform: The software should conduct as many tasks as possible using limited hardware. 
+This matches with computing objectives and is the principle behind multitasking.
